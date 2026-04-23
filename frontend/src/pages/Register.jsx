@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
+const navigate = useNavigate();
+
 export default function Register() {
   const [form, setForm] = useState({
     name: "",
@@ -13,6 +15,7 @@ export default function Register() {
     try {
       await axios.post("https://student-grievance-system-tgtn.onrender.com/api/register", form);
       alert("Registered successfully");
+      navigate("/login"); 
     } catch (err) {
       alert(err.response?.data?.message || "Error");
     }

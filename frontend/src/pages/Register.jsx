@@ -14,8 +14,7 @@ export default function Register() {
   const handleSubmit = async () => {
     try {
       await axios.post("https://student-grievance-system-tgtn.onrender.com/api/register", form);
-      alert("Registered successfully");
-      navigate("/login"); 
+      alert("Registered successfully"); 
     } catch (err) {
       alert(err.response?.data?.message || "Error");
     }

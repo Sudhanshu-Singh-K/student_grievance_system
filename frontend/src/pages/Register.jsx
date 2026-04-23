@@ -15,7 +15,6 @@ export default function Register() {
     try {
       await axios.post("https://student-grievance-system-tgtn.onrender.com/api/register", form);
       alert("Registered successfully");
-      console.log("Navigating...");
       navigate("/login"); 
     } catch (err) {
       alert(err.response?.data?.message || "Error");

@@ -15,7 +15,7 @@ export default function Dashboard() {
 
   const fetchData = async () => {
     const res = await axios.get(
-      "http://localhost:5000/api/grievances",
+      "https://student-grievance-system-tgtn.onrender.com/api/grievances",
       { headers: { Authorization: token } }
     );
     setGrievances(res.data);
@@ -27,7 +27,7 @@ export default function Dashboard() {
 
   const addGrievance = async () => {
     await axios.post(
-      "http://localhost:5000/api/grievances",
+      "https://student-grievance-system-tgtn.onrender.com/api/grievances",
       {
         title,
         description: desc,
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
   const deleteGrievance = async (id) => {
     await axios.delete(
-      `http://localhost:5000/api/grievances/${id}`,
+      `https://student-grievance-system-tgtn.onrender.com/api/grievances/${id}`,
       { headers: { Authorization: token } }
     );
     fetchData();
